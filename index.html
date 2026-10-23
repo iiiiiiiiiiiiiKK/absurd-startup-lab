@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f4f2ec" />
+    <title>离谱创业模拟器 · 下一个改变世界的项目，可能很荒唐</title>
+    <meta
+      name="description"
+      content="选一个赛道、挑一种语气、推一下荒诞程度，一键生成结构完整、逻辑自洽的虚构创业提案。无需 API Key，纯前端生成，可复制、导出 Markdown / JSON、生成分享海报。"
+    />
+    <meta name="color-scheme" content="light" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="离谱创业模拟器 · Absurd Startup Lab" />
+    <meta
+      property="og:description"
+      content="下一个改变世界的项目，可能很荒唐。一键生成完整虚构创业提案：目标用户、痛点、方案、收费模式、最离谱的卖点、投资人会问什么。"
+    />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AA%3C/text%3E%3C/svg%3E" />
+    <style>
+      /* 首屏骨架，避免 JS 加载前的白闪 */
+      html, body { margin: 0; background: #f4f2ec; }
+      #boot {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font: 500 13px/1.6 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+        color: #767d89;
+        letter-spacing: 0.06em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"><div id="boot">正在启动创业实验室…</div></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

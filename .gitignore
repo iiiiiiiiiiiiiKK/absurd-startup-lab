@@ -1,0 +1,35 @@
+# 依赖与构建产物
+node_modules/
+dist/
+*.tsbuildinfo
+
+# 本地环境变量（绝不要提交 Key）
+.dev.vars
+.env
+.env.*
+!.env.example
+
+# 本地 npm 配置（含本机网络设置，不入库）
+.npmrc
+
+# 测试 / 审计临时产物
+.selftest-tmp/
+.e2e-out/
+.layout-out/
+.poster-out/
+.test-out/
+.dbg-tmp/
+.tmp-report/
+.dl-debug/
+
+# 部署工具缓存
+.wrangler/
+.vercel/
+
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+*.local
+*.log
+.vscode/
+.idea/

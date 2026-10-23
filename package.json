@@ -1,0 +1,33 @@
+{
+  "name": "absurd-startup-lab",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "离谱创业模拟器 — 独立创业实验室风格的荒诞创业项目生成器（纯前端 + 可选 AI 增强）",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b",
+    "test": "node scripts/selftest.mjs",
+    "test:e2e": "node scripts/e2e.mjs",
+    "test:layout": "node scripts/layout-audit.mjs",
+    "test:poster": "node scripts/poster-check.mjs",
+    "test:ai": "node scripts/ai-adapter-test.mjs",
+    "test:all": "node scripts/run-all.mjs",
+    "ai:dev": "node server/ai-dev-server.mjs"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "4.3.4",
+    "esbuild": "^0.21.5",
+    "puppeteer-core": "^23.11.1",
+    "typescript": "5.6.3",
+    "vite": "5.4.11"
+  }
+}

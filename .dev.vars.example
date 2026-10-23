@@ -1,0 +1,32 @@
+# `.dev.vars` 示例
+
+复制本文件为 `.dev.vars` 并填入你的 Key。
+
+```
+cp .dev.vars.example .dev.vars        # macOS / Linux
+copy .dev.vars.example .dev.vars      # Windows
+```
+
+> ⚠️ `.dev.vars` 默认会被 `.gitignore` 忽略，绝不要把真实 Key 提交到代码仓库。
+
+```env
+# 必填：你的模型服务商 Key（只存在于环境变量，前端永远拿不到）
+AI_API_KEY=sk-xxxxxxxxxxxxxxxx
+
+# 可选：OpenAI 兼容网关地址（默认 https://api.openai.com/v1）
+# AI_API_BASE=https://openrouter.ai/api/v1
+
+# 可选：模型名（默认 gpt-4o-mini）
+# AI_MODEL=gpt-4o-mini
+```
+
+---
+
+## 本地 AI 服务端
+
+```bash
+npm run ai:dev        # 监听 127.0.0.1:5199，自动加载 .dev.vars
+```
+
+在 `vite.config.ts` 中，`dev.proxy` 已把 `/api` 转发到 `5199`，
+所以开发模式下 `npm run dev` 即可使用 AI 增强功能。
