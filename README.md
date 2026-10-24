@@ -11,7 +11,8 @@
 
 <br />
 
-[![Live Demo](https://img.shields.io/badge/🚀_在线体验-iiiiiiiiiiiiiKK.github.io-ff4d8d?style=for-the-badge)](https://iiiiiiiiiiiiiKK.github.io/absurd-startup-lab/)
+[![Live Demo](https://img.shields.io/badge/🚀_在线体验-absurd--startup--lab.pages.dev-ff4d8d?style=for-the-badge)](https://absurd-startup-lab.pages.dev/)
+[![Mirror](https://img.shields.io/badge/镜像-GitHub_Pages-14161a?style=for-the-badge&logo=github&logoColor=white)](https://iiiiiiiiiiiiiKK.github.io/absurd-startup-lab/)
 [![Tests](https://img.shields.io/badge/tests-443_passing-12b886?style=for-the-badge&logo=checkmarx&logoColor=white)](./TEST-REPORT.md)
 [![No API Key](https://img.shields.io/badge/API_Key-不需要-14161a?style=for-the-badge&logo=keybase&logoColor=white)](#-可选-ai-增强)
 [![License](https://img.shields.io/badge/license-MIT-2f6bff?style=for-the-badge)](./LICENSE)
@@ -22,7 +23,7 @@
 [![零后端](https://img.shields.io/badge/backend-zero-12b886?style=flat-square)](#)
 [![离线可用](https://img.shields.io/badge/offline-ready-ff8a00?style=flat-square)](#)
 
-[**在线体验**](https://iiiiiiiiiiiiiKK.github.io/absurd-startup-lab/) · [**功能全览**](#-功能全览) · [**生成逻辑**](#-生成逻辑重点) · [**部署**](#-部署) · [**测试报告**](./TEST-REPORT.md)
+[**在线体验**](https://absurd-startup-lab.pages.dev/) · [**功能全览**](#-功能全览) · [**生成逻辑**](#-生成逻辑重点) · [**部署**](#-部署) · [**测试报告**](./TEST-REPORT.md)
 
 </div>
 
@@ -406,17 +407,28 @@ npm run test:all      # 全流程（自动构建 + 起 preview + 全部测试）
 
 ## 🚢 部署
 
+### 已上线地址
+
+| 平台 | 地址 | 说明 |
+|---|---|---|
+| ☁️ **Cloudflare Pages**（主站） | https://absurd-startup-lab.pages.dev/ | 全球 CDN，含 Pages Functions（AI 增强可启用） |
+| 🐙 **GitHub Pages**（镜像） | https://iiiiiiiiiiiiiKK.github.io/absurd-startup-lab/ | 由 GitHub Actions 自动构建部署，纯静态 |
+
+两个站内容完全一致，都是同一个 `dist/` 产物。
+
 ### GitHub Pages（已配置自动部署）
 
 仓库包含 `.github/workflows/deploy.yml`。推送到 `main` 即自动构建并发布到 Pages。
 
 > 项目使用相对 `base: './'`，部署到 `username.github.io/repo-name/` 子路径可直接工作。
+> 工作流会自动追加 `404.html` 与 `.nojekyll`，避免子路径 404 与 Jekyll 干扰。
 
 ### Cloudflare Pages
 
 ```bash
 npm run build
-npx wrangler pages deploy dist --project-name=absurd-startup-lab
+npx wrangler pages project create absurd-startup-lab --production-branch=main
+npx wrangler pages deploy dist --project-name=absurd-startup-lab --branch=main
 ```
 
 或在控制台连接 Git 仓库：Build command `npm run build`，Output directory `dist`。
